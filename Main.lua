@@ -16,7 +16,7 @@ local HttpService = game:GetService('HttpService')
 local Supported = false
 local Script = nil
 
-local GameList = game:HttpGet('https://raw.githubusercontent.com/Xarkkz/loader/main/GameList.json')
+local GameList = game:HttpGet('https://raw.githubusercontent.com/xor123x/SH/blob/main/GameList.json')
 function GetGame()
     local GameTable = HttpService:JSONDecode(GameList)
     if GameTable[tostring(game.PlaceId)] then 
@@ -29,7 +29,7 @@ local Game = GetGame()
 
 if Game then
     Supported = true
-    Script = game:HttpGet('https://raw.githubusercontent.com/Xarkkz/loader/main/' .. Game.ScriptName)
+    Script = game:HttpGet('https://raw.githubusercontent.com/xor123x/SH/blob/main/' .. Game.ScriptName)
 end
 
 local DuckHub = Instance.new("ScreenGui")
